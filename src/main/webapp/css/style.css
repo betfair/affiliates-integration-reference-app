@@ -1,0 +1,462 @@
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+    width: 100%;
+}
+
+.betfair-header-main {
+    height: 70px;
+    padding: 10px;
+}
+
+.betfair-header-main .navbar-brand {
+    padding: 10px;
+}
+
+.betfair-header-main .navbar-brand img {
+    height: 30px;
+}
+
+.betfair-header-main .betfair-header-text {
+    display: inline-block;
+    margin: 0;
+    line-height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#loginFrame {
+    width: 100%;
+}
+
+.event {
+    padding: 20px;
+    list-style: none;
+    border-bottom: 1px solid #cccccc;
+    clear: both;
+}
+
+.event button {
+    float: right;
+
+}
+
+.bet-container {
+    float: left;
+    width: 100%;
+    min-height: 730px;
+    overflow: hidden;
+}
+
+.bet-slip span {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.bet-slip p {
+    display: inline-block;
+    float: left;
+    clear: both;
+
+}
+
+.bet-slip .amount-to-bet {
+    float: right;
+    max-width: 20%;
+
+}
+
+.bet-slip button {
+    float: left;
+    clear: both;
+}
+
+.event ul .btn {
+    float: none;
+}
+
+#handleTokenRequest {
+    display: none;
+}
+
+.event > ul {
+    clear: both;
+    padding-top: 10px;
+}
+
+.competition-bet-type {
+    float: right;
+}
+
+.competition-name, .runner-name, .use-bonus {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cccccc;
+}
+
+.runner-name b {
+    float: right;
+}
+
+.stake-box {
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 10px;
+}
+
+#iframeConnectionHandler {
+    display: none;
+    height: 720px;
+    width: 100%;
+}
+
+.iframe-style {
+    width: 100%;
+    height: 600px;
+}
+
+.bookkeeper-container {
+    padding: 15px 0;
+}
+
+.bookkeeper-iframe {
+    display: none;
+    height: 600px;
+    width: 100%;
+}
+
+.back-to-betslip-container {
+    padding: 0 0 16px 0;
+}
+
+.back-to-betslip, .betslipBtn, .myAccountBtn {
+    display: none;
+}
+
+#integrationBetfair {
+    display: block;
+    position: relative;
+}
+
+#integrationPaddypower {
+    display: none;
+    position: relative;
+}
+
+.iframe-style #bookkeeper-iframe {
+    display: none;
+}
+
+.update-product-token-frame {
+    display: none;
+}
+
+.betfair-betslip .panel-heading {
+
+}
+
+.integration-container .panel-heading a.open-account, .betfair-betslip .panel-heading a.betslip-close {
+    font-family: "Flama", Arial, Tahoma, serif;
+    font-size: 16px;
+    line-height: 40px;
+    color: #1e1e1e;
+    padding-right: 15px;
+    display: inline-block;
+    float: right;
+}
+
+.integration-container .panel-heading a.open-account {
+    background: url("../image/icon-chevron.svg") no-repeat center right;
+    background-size: 10px;
+}
+
+.integration-container .panel-heading a.betslip-close {
+    background: url("../image/icon-close.svg") no-repeat center right;
+    background-size: 10px;
+    display: none;
+    padding-right: 15px;
+    float: right;
+    line-height: 22px;
+    margin-bottom: 12px;
+}
+
+.integration-container .panel-heading a.betslip-close + hr {
+    clear: both;
+}
+
+.integration-container .panel-heading a.hide-betslip {
+    background: url("../image/icon-close.svg") no-repeat center right;
+    line-height: 50px;
+    padding-right: 15px;
+    background-size: 10px;
+    font-weight: bold;
+
+}
+
+.integration-container .panel-heading a.hide-betslip:hover {
+    text-decoration: none;
+}
+
+.integration-container .panel-heading > h3.betslip-heading {
+    line-height: 50px;
+    padding: 0;
+    display: inline;
+}
+
+.logo-wrapper {
+    display: inline-block;
+    width: 150px;
+    padding: 10px 20px 10px 10px;
+    border-radius: 5px;
+    background: url("../image/icon-check-simple.svg") no-repeat 125px center, #ffb80c;
+    background-size: 15px;
+}
+
+.betfair-logo {
+    width: 60%;
+}
+
+.paddypower-logo-wrapper {
+    background: url("../image/icon-check-simple.svg") no-repeat 125px center, rgba(17, 90, 71, 1);
+    background-size: 0;
+}
+
+.paddypower-logo {
+    width: 80%;
+}
+
+.betfair-btn {
+    padding: 11px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: bold;
+    min-width: 49%;
+}
+
+.betfair-btn:active {
+    box-shadow: 0 2px 2px #000;
+}
+
+.betfair-btn:active:hover {
+    background: #e5a50b;
+    box-shadow: 0 2px 2px #000;
+}
+
+.betfair-primary {
+    background: #ffb80c;
+    color: #1e1e1e;
+}
+
+.betfair-primary:hover {
+    background: #e5a50b;
+}
+
+.betfair-primary:active {
+    background: #e5a50b;
+
+}
+
+.betfair-primary:active:hover {
+    background: #ffb80c;
+}
+
+.betfair-secondary {
+    background: #c4c4c4;
+}
+
+.betfair-secondary:hover {
+    background: #c8c8c8;
+}
+
+.betfair-secondary:active {
+    background: #c8c8c8;
+}
+
+.toggle-mobile-view {
+    display: none;
+    margin: 7px;
+}
+
+.paddypower-btn {
+    padding: 11px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: bold;
+    min-width: 49%;
+}
+
+.paddypower-btn:active {
+    border-radius: 2px;
+
+}
+
+.paddypower-btn:active:hover {
+    background: #2c8637;
+    box-shadow: 0 2px 2px #000;
+}
+
+.paddypower-primary {
+    color: #ffffff;
+    background-color: #31953e;
+    box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.paddypower-primary:hover {
+    background-color: #2c8637;
+}
+
+.paddypower-primary:active {
+    background-color: #277731;
+
+}
+
+.paddypower-primary:active:hover {
+    background-color: #277731;
+}
+
+.paddypower-secondary {
+    background: #bbbbbb;
+}
+
+.paddypower-secondary:hover {
+    background: #989898;
+}
+
+.paddypower-secondary:active {
+    background: #888888;
+}
+
+.paddypower-toggle-mobile {
+    display: none;
+    margin: 7px;
+}
+
+.betslip-close img {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.account-balance {
+    float: right;
+    display: none;
+    padding: 0;
+    text-align: right;
+}
+
+.account-balance p, .account-balance b {
+    margin: 0;
+    line-height: 15px;
+}
+
+.bet-slip .placing-bet-result {
+    display: none;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.btn-group .betfair-btn, .btn-group .paddypower-btn {
+    min-width: 0;
+}
+
+#receiptContainerBetfair, #receiptContainerPaddypower {
+    display: none;
+}
+
+#betReceiptBetfair, #betReceiptPaddypower {
+    position: absolute;
+    width: auto;
+    left: 0;
+    top: 70px;
+    display: block;
+}
+
+.well {
+    width: 100% !important;
+}
+
+.well > .panel-heading {
+    padding: 0;
+}
+
+#betReceiptBetfair button {
+    clear: none;
+}
+
+.integration-container .mobile-view-header {
+    display: none;
+}
+
+.integration-container .panel-heading .mobile-view-close-betslip {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .integration-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+    }
+
+    .integration-container .mobile-view-header {
+        display: block;
+    }
+
+    .integration-container .panel-heading a.open-account {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar .read-docs {
+        display: none;
+    }
+
+    .toggle-mobile-view {
+        display: block;
+    }
+
+    .integration-container {
+        display: none;
+    }
+
+    .integration-container .panel-heading a.open-account {
+        display: none;
+    }
+
+    .integration-container .panel-heading a.betslip-close {
+        display: inline;
+    }
+
+    .integration-container .panel-heading .mobile-view-close-betslip {
+        display: block;
+    }
+
+    .betfair-header-main .navbar-header {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .integration-container {
+        display: none;
+    }
+
+    .navbar .read-docs {
+        display: none;
+    }
+
+    .toggle-mobile-view {
+        display: block;
+    }
+
+    .integration-container .panel-heading a.betslip-close {
+        display: inline;
+    }
+}

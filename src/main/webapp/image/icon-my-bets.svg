@@ -1,0 +1,8 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve" preserveAspectRatio="xMidYMid meet">
+
+    <style type="text/css">
+        .colour{ fill: #1e1e1e; }
+    </style>
+
+	<path class="colour" d="M11,13H5V8V0h10v13H11z M14,1H6v4h4h1h3V1z M11,16H1V3h3v1H2v4h2v6h7V16z"/>
+</svg>

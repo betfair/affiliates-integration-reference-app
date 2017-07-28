@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affiliates Page</title>
+
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="webjars/jquery/3.1.1-1/jquery.min.js"></script>
+    <script src="webjars/jquery-cookie/1.3.1/jquery.cookie.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <script language="javascript" src="js/config.js"></script>
+    <script language="javascript" src="js/integration.js"></script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-inverse betfair-header-main">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <a class="navbar-brand"><img src="image/logo.jpg" alt=""></a>
+                <h3 class="betfair-header-text navbar-text">Affiliate Integration</h3>
+                <button class="btn btn-default toggle-mobile-view pull-right" id="toggle-mobile-view"><img
+                        src="image/icon-my-bets.svg" alt="My Bets" width="20"
+                        height="20"></button>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="read-docs"><a href="#">Read documentation</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <span class="navbar-brand">
+                        Select brand
+                    </span>
+                    <div class="navbar-right btn-group" role="group" aria-label="Brand">
+                        <button id="brand-selected-betfair" type="button"
+                                class="btn btn-default betfair-btn betfair-primary select-brand">Betfair
+                        </button>
+
+
+                        <button id="brand-selected-paddypower" type="button"
+                                class="btn btn-default paddypower-btn paddypower-primary select-brand">Paddypower
+                        </button>
+
+
+                        <input name="brand-selected" id="brand-selected" type="hidden" value="betfair">
+                    </div>
+                </div>
+                <hr>
+            </nav>
+            <ul class="eventsList" id="integrationEventList">
+            </ul>
+        </div>
+        <div class="col-md-4">
+
+            <div class="panel panel-default integration-container" id="integrationContainer">
+                <div class="panel-heading panel-info mobile-view-header">
+                    <h3 class="h3 betslip-heading">Select a brand</h3>
+                    <a href="#" class="hide-betslip pull-right" id="closeBetslip">Close</a>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!--BETFAIR BETSLIP-->
+                <div class="panel-heading" id="headerBetfair">
+                    <div class="mobile-view-close-betslip">
+                        <a href="#" class="betslip-close betfair-betslip-close-mobile" id="closeMobileBetfair">Hide
+                            Betslip</a>
+                        <hr/>
+                    </div>
+                    <span class="logo-wrapper select-brand" id="betslip-selected-betfair">
+                    <img src="image/betfair.png" alt="betfair"
+                         class="betfair-logo">
+                    </span>
+                    <a href="#" class="open-account betfair-betslip-header-text" target="_blank"
+                       id="openAccountBetfair">Open
+                        Account</a>
+                    <span class="account-balance" id="accountBalanceBetfair"></span>
+
+                </div>
+                <div class="panel-body" id="integrationBetfair">
+                    <div class="bet-container">
+                        <div id="bookkeeperActionContainerBetfair" class="text-center">
+                            <button class="btn btn-default betfair-btn betfair-secondary login-btn"
+                                    id="loginBtnBetfair">
+                                Login
+                            </button>
+                            <button class="btn btn-default  betfair-btn betfair-primary register-btn"
+                                    id="registerBtnBetfair">Register
+                            </button>
+                            <button class="btn btn-default betfair-btn betfair-primary betslip-btn"
+                                    id="betslipBtnBetfair">Bet Slip
+                            </button>
+                            <button class="btn btn-default betfair-btn betfair-secondary my-account-btn"
+                                    id="myAccountBtnBetfair">My Account
+                            </button>
+
+                        </div>
+                        <div class="bookkeeper-container">
+                            <iframe src="" frameborder="0" id="bookkeeperIframeBetfair"
+                                    class="iframe-style bookkeeper-iframe"></iframe>
+                        </div>
+
+                        <div class="back-to-betslip-container">
+                            <button class="btn btn-success betfair-btn betfair-secondary back-to-betslip"
+                                    id="backToBetslipBetfair">Back to
+                                Betslip
+                            </button>
+                        </div>
+
+                        <div class="bet-slip" id="betslipContainerBetfair" style="display: block;">
+                            <p class="competition-name">
+                                <span class="label label-default"
+                                      id="competitionNameValueBetfair">Competition Here</span>
+                                <b class="competition-bet-type" id="competitionBetTypeBetfair">Bet Type Here</b>
+                            </p>
+                            <p class="runner-name" id="runnerNameBetfair">Odds:<input type="button"
+                                                                                      id="oddsOfBetBetfair" disabled=""
+                                                                                      class="btn btn-danger"
+                                                                                      value="here"><b>Selection Here</b>
+                            </p>
+
+                            <p class="use-bonus">
+                                <b>Use available bonus</b>
+                                <span class="pull-right"><input type="checkbox" name="use-bonus-paddypower"
+                                                                id="useBonusBetfair" class="use-bonus-checkbox"
+                                                                value="use-bonus-betfair"></span>
+                            </p>
+                            <p class="stake-box" id="stakeBoxBetfair">
+                             <span class="winning-amount">Win:
+                                 <b id="amountToWinBetfair">0.0</b>
+                             </span>
+                                <input class="amount-to-bet" id="amountToBetBetfair" type="text" placeholder="Stake">
+                            </p>
+                            <br>
+                            <button type="submit" class="btn btn-default betfair-btn betfair-primary place-bet"
+                                    id="placeBetBetfair">
+                                Place bet!
+                            </button>
+
+                            <span class="label label-success placing-bet-result" id="requestStatusMessageBetfair">
+                                 Bet placed successfully!
+                             </span>
+
+
+                        </div>
+
+
+                    </div>
+                    <div id="receiptContainerBetfair">
+                        <div class="well " id="betReceiptBetfair">
+                            <div class="panel-heading"><span>Receipt - Single Bet <b id="brReceiptTitleIdBetfair"></b></span>
+                                <hr>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <b id="brEventMarketTitleBetfair"></b>
+                                    <span class="pull-right" id="brEventMarketTitleBetBetfair">£2</span>
+                                </li>
+
+                                <li class="list-group-item"><b>Selection</b> :
+                                    <span id="brSelectionContainerBetfair"></span>
+                                    <span class="label label-default pull-right" id="brSelectionContainerOddsBetfair"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Receipt ID</b>
+                                    <span class="pull-right" id="brReceiptIdBetfair"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Time Bet Placed</b>
+                                    <span class="pull-right"
+                                          id="brReceiptBetPlacedTimeBetfair"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Bet Type</b>
+                                    <span class="pull-right" id="brBetTypeBetfair"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Total Stake</b>
+                                    <span class="pull-right" id="brTotalStakeBetfair">
+                                    </span>
+                                    <b id="brBonusStakeBetfair" class="pull-right"></b>
+                                </li>
+                                <li class="list-group-item"><b>Estimated Returns</b> <b class="pull-right" id="brEstimatedReturnsBetfair"></b></li>
+                            </ul>
+                            <button class="btn betfair-btn betfair-primary receipt-close" value="betfair">Close
+                                Receipt
+                            </button>
+                            <button class="btn btn-default betfair-btn betfair-secondary receipt-open-my-bet"
+                                    value="betfair"> View in My Bets
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--END BETFAIR BETSLIP-->
+
+
+                <!--PADDYPOWER BETSLIP-->
+                <div class="panel-heading" id="headerPaddypower">
+                    <div class="mobile-view-close-betslip">
+                        <a href="#" class="betslip-close paddypower-betslip-close-mobile" id="closeMobilePaddypower">Open
+                            Betslip</a>
+                        <hr/>
+                    </div>
+                    <span class="logo-wrapper paddypower-logo-wrapper select-brand" id="betslip-selected-paddypower">
+                    <img src="image/paddypower.jpg" alt="paddypower"
+                         class="paddypower-logo">
+                    </span>
+                    <a href="#" class="open-account paddypower-betslip-header-text" target="_blank"
+                       id="openAccountPaddypower">Open
+                        Account</a>
+                    <span class="account-balance" id="accountBalancePaddypower"></span>
+                </div>
+                <div class="panel-body" id="integrationPaddypower">
+                    <div class="bet-container">
+                        <div id="bookkeeperActionContainerPaddypower" class="text-center">
+                            <button class="btn btn-default paddypower-btn paddypower-secondary login-btn"
+                                    id="loginBtnPaddypower">Login
+                            </button>
+                            <button class="btn btn-default  paddypower-btn paddypower-primary register-btn"
+                                    id="registerBtnPaddypower">Register
+                            </button>
+                            <button class="btn btn-default paddypower-btn paddypower-primary betslip-btn"
+                                    id="betslipBtnPaddypower">Bet Slip
+                            </button>
+                            <button class="btn btn-default paddypower-btn paddypower-secondary my-account-btn"
+                                    id="myAccountBtnPaddypower">My Account
+                            </button>
+
+                        </div>
+                        <div class="bookkeeper-container">
+                            <iframe src="" frameborder="0" id="bookkeeperIframePaddypower"
+                                    class="iframe-style bookkeeper-iframe"></iframe>
+                        </div>
+
+                        <div class="back-to-betslip-container">
+                            <button class="btn btn-success paddypower-btn paddypower-secondary back-to-betslip"
+                                    id="backToBetslipPaddypower">Back to
+                                Betslip
+                            </button>
+                        </div>
+
+                        <div class="bet-slip" id="betslipContainerPaddypower" style="display: block;">
+                            <p class="competition-name">
+                                <span class="label label-default"
+                                      id="competitionNameValuePaddypower">Competition Here</span>
+                                <b class="competition-bet-type" id="competitionBetTypePaddypower">Bet Type Here</b>
+                            </p>
+                            <p class="runner-name" id="runnerNamePaddypower">Odds:
+                                <input type="button" id="oddsOfBetPaddypower" disabled="" class="btn btn-danger"
+                                       value="here"><b>Selection Here</b>
+                            </p>
+                            <p class="use-bonus">
+                                <b>Use available bonus</b>
+                                <span class="pull-right"><input type="checkbox" name="use-bonus-paddypower"
+                                                                id="useBonusPaddypower" class="use-bonus-checkbox"
+                                                                value="use-bonus-paddypower"></span>
+                            </p>
+                            <p class="stake-box" id="stakeBoxPaddypower">
+                             <span class="winning-amount">Win:
+                                 <b id="amountToWinPaddypower">0.0</b>
+                             </span>
+                                <input class="amount-to-bet" id="amountToBetPaddypower" type="text" placeholder="Stake">
+                            </p>
+                            <br>
+                            <button type="submit" class="btn btn-default paddypower-btn paddypower-primary place-bet"
+                                    id="placeBetPaddypower">
+                                Place bet!
+                            </button>
+
+                            <span class="label label-success placing-bet-result" id="requestStatusMessagePaddypower">
+                                 Bet placed successfully!
+                             </span>
+                        </div>
+                    </div>
+                    <div id="receiptContainerPaddypower">
+                        <div class="well " id="betReceiptPaddypower">
+                            <div class="panel-heading"><span>Receipt - Single Bet <b id="brReceiptTitleIdPaddypower">#</b></span>
+                                <hr>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <b id="brEventMarketTitlePaddypower"></b>
+                                    <span class="pull-right" id="brEventMarketTitleBetPaddypower">£2</span>
+                                </li>
+
+                                <li class="list-group-item"><b>Selection</b> :
+                                    <span id="brSelectionContainerPaddypower"></span>
+                                    <span class="label label-default pull-right" id="brSelectionContainerOddsPaddypower">2.1</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Receipt ID</b>
+                                    <span class="pull-right" id="brReceiptIdPaddypower"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Time Bet Placed</b>
+                                    <span class="pull-right"
+                                          id="brReceiptBetPlacedTimePaddypower"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Bet Type</b>
+                                    <span class="pull-right" id="brBetTypePaddypower"></span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Total Stake</b>
+                                    <span class="pull-right" id="brTotalStakePaddypower">
+                                        <b id="brBonusStakePaddypower"> </b>
+                                    </span>
+                                </li>
+                                <li class="list-group-item"><b>Estimated Returns</b> <b class="pull-right" id="brEstimatedReturnsPaddypower"></b></li>
+                            </ul>
+                            <button class="btn paddypower-btn paddypower-primary receipt-close" value="paddypower">Close
+                                Receipt
+                            </button>
+                            <button class="btn btn-default paddypower-btn paddypower-secondary receipt-open-my-bet"
+                                    value="paddypower"> View in My Bets
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--END PADDYPOWER BETSLIP-->
+            </div>
+        </div>
+    </div>
+</div>
+<script language="javascript" src="js/main.js"></script>
+</body>
+</html>
