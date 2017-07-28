@@ -17,4 +17,3 @@ In order to run the application you must do the do the following steps
 * Run mvn `mvn clean compile tomee-embedded:run -Denv=prod`. -Denv could be 'nxt' or 'prod', if not specified the application will start with 'prod' setup.
     This will start an tomcat server that will serve the application. If running on *nix systems please use sudo
 * Open your browser and go to [http://test.affiliate.test/affiliate-integration](http://test.affiliate.test/affiliate-integration)
-* This project contains an iframe test page at [http://test.affiliate.test/affiliate-integration/test-iframes.html](http://test.affiliate.test/affiliate-integration/test-iframes.html)
